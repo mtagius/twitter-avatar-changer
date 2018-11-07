@@ -1,6 +1,6 @@
 
 start chrome
-sleeep1
+sleep1
 
 set list=^
  "https://github.com/mtagius/twitter-avatar-changer"^
