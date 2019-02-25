@@ -8,7 +8,7 @@ auth = OAuthHandler(keys.consumer_key, keys.consumer_secret)
 auth.set_access_token(keys.access_token, keys.access_token_secret)
 twitterApi = API(auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True)
 
-filepath = ""
+filepath = "/home/matt/twitter-avatar-changer/"
 dice = [
     "Twitter-Dice-1.png",
     "Twitter-Dice-2.png",
