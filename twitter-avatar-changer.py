@@ -1,4 +1,4 @@
-import random
+from random import randint
 from tweepy import OAuthHandler
 from tweepy import API
 import keys #python file containing secret API keys
@@ -18,7 +18,25 @@ dice = [
     "Twitter-Dice-6.png",
 ]
 
-choice = random.choice(dice)
+try:
+    file = open(filepath + "previousPick.txt", 'r')
+except FileNotFoundError:
+    file = open(filepath + "previousPick.txt", 'w')
+
+previousPick = 0
+
+for line in open(filepath + "previousPick.txt"):
+    previousPick = int(line)
+
+choice = randint(0,5)
+
+while choice == previousPick:
+    choice = randint(0,5)
+
+wr = open(filepath + "previousPick.txt", 'w')
+wr.write(str(choice))
+
+choice = dice[choice]
 
 print(choice)
 
